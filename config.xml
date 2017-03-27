@@ -2,14 +2,30 @@
 <widget id="co.soccerid" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>SOCCERiD</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Main SOCCER iD mobile application.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
-    </author>
+     <author email="leon@somosfut.com" href="http://somosfut.com">SOMOSFUT</author>
     <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="phonegap-version" value="cli-6.1.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="permissions" value="none" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="deployment-target" value="7.0" />
+    <preference name="DisallowOverscroll" value="true" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
