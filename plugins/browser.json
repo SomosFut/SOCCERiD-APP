@@ -63,6 +63,11 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "co.soccerid"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "716832795142205",
+            "APP_NAME": "Soccerid",
+            "PACKAGE_NAME": "co.soccerid"
         }
     },
     "dependent_plugins": {

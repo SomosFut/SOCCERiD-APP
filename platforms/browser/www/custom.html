@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://soccerid.co/" />
+    <meta property="og:title" content="SOCCERiD" />
+    <meta property="og:image" content="https://s3.amazonaws.com/com.somosfut/cdn/ogpsid.png" />
+    <meta property="og:description" content="#ElCrackEresTú 
+    Player Card, info de todos los equipos donde juegas y grandes Beneficios. 
+    ¡Es momento de que seas el Protagonista!" />
+  <title>SOCCER iD</title>
+
+  <!--pageMeta-->
+
+  <!-- Lib CSS -->
+  <link href="https://static.soccerid.co/minify/rgen_min.css" rel="stylesheet">
+  <link href="https://static.soccerid.co/css/custom.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  
+ <link rel="shortcut icon" type="image/png" href="https://static.soccerid.co/images/soccerid/favicon.png">
+
+
+</head>
+<body>
+
+
+<canvas id="canvas" width="202" height="314" style="border:0px solid #000000;">
+</canvas>
+
+
+<!-- <div style="position:absolute; top : 0px; left: 0px; background-color: blue; width: 50px; height: 50px;"></div> -->
+
+<script>
+  
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+var img1 = loadImage('https://scontent.xx.fbcdn.net/v/t1.0-1/c74.30.497.497/s50x50/1044538_598614046850102_1738221590_n.jpg?oh=25bbd36df82048167faa3f0e4ff2e23d&oe=591F8D7E', main);
+var img2 = loadImage('https://static.soccerid.co/test/card.png', main);
+var img3 = loadImage('https://static.soccerid.co/test/mexico.png', main);
+
+var imagesLoaded = 0;
+function main() {
+    imagesLoaded += 1;
+
+    if(imagesLoaded == 3) {
+        // composite now
+
+        var name = 'MARCOS ZARATE';
+        var num = '88';
+        var pos='MEDIO';
+        
+        ctx.drawImage(img1, 51, 32,100,100);
+        ctx.drawImage(img2, 0, 0);
+        ctx.drawImage(img3, 158, 125,26,26);
+
+        ctx.fillStyle = 'white';
+
+        ctx.font="26px sans-serif";   
+        ctx.fillText(num,18,145);
+
+ctx.textAlign = "center";
+
+        ctx.font="14px sans-serif";   
+        ctx.fillText(pos,101,148);     
+        //ctx.fillText(pos , (202/2) - (ctx.measureText(pos).width / 2), 145);     
+
+        ctx.font="18px sans-serif";
+        ctx.fillText(name,101,185);
+
+
+        ctx.font="24px sans-serif";
+        ctx.fillText('89',147,220);
+
+        ctx.font="14px sans-serif";
+        ctx.fillText('DEFENSA',147,245);
+
+
+        ctx.font="24px sans-serif";
+        ctx.fillText('90',55,220);
+
+        ctx.font="14px sans-serif";
+        ctx.fillText('ATAQUE',55,245);
+
+ctx.textAlign = "end";
+
+
+        
+        
+        //var textWidth = ctx.measureText(name).width;
+        //ctx.fillText(name , (202/2) - (textWidth / 2), 180);
+        
+    }
+}
+
+function loadImage(src, onload) {
+    // http://www.thefutureoftheweb.com/blog/image-onload-isnt-being-called
+    var img = new Image();
+
+    img.onload = onload;
+    img.src = src;
+
+    return img;
+}
+
+
+</script>
+</body>
+</html>
