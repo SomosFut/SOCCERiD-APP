@@ -1,45 +1,104 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+  document.addEventListener("deviceready", onDeviceReady, false);
   
   function onDeviceReady() {
 
-    navigator.notification.alert('listo');
-    facebookConnectPlugin.getLoginStatus(function(d) {
+    /* =====================================================================================================
+      VALID STATUS
+    ===================================================================================================== */
+    facebookConnectPlugin.getLoginStatus(function(d) {   
       if (d.status === 'connected'){
-        alert('login');
-        // authResponse.accessToken
-      } else {
-        añert('ups');
+        // if (window.localStorage.getItem('step') === '1') {
+        //   window.location='league.html';
+        // } else {
+        //   window.location='dash.html';
+        //}
       }
-    }, function(){
-      alert('error getLogin');
+    });
+
+    /* =====================================================================================================
+      LOGIN BUTTON
+    ===================================================================================================== */
+    document.getElementById('btnLogin').onclick = function(){
+      facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
+        function (error) {
+          navigator.notification.alert('Facebook no disponible.');
+        }
+      );
+    };
+  }
+
+  function fbLoginSuccess(userData) {
+    
+    facebookConnectPlugin.getAccessToken(function(token) {
+      check(token, function(d){
+        var info;
+        try {
+          info = JSON.parse(d.currentTarget.responseText);
+        }
+        catch(err) {
+          info = null;
+        }
+
+        if (info && info.name) {
+          window.localStorage.setItem('name', info.name);
+          window.localStorage.setItem('photo', info.photo);
+          window.localStorage.setItem('url', info.url);
+          window.localStorage.setItem('step', info.s);
+          if (info.s === '1') {
+            window.location='league.html';
+          } else {
+            window.location='dash.html';
+          }
+        }
+
+      });
+      //
+      
     });
   }
 
-  var fbLoginSuccess = function (userData) {
-    navigator.notification.alert('userdata');
-    //alert("UserInfo: "+ userData);
-    facebookConnectPlugin.getAccessToken(function(token) {
-      navigator.notification.alert("Token: " + token);
-      //alert("Token: " + token);
-    });
-  }
 
   
   /* =====================================================================================================
-    BY PASS BUTTON
+    GET SERVER DATA
   ===================================================================================================== */
+  function check(token, cb) {
+    let xhr =  new XMLHttpRequest;
+    xhr.onload = cb;
+    xhr.onerror = function(){ console.log('error xhr url'); };
+    xhr.open('GET', 'https://soccerid.co/a/facebook/token?access_token='+token);
+    xhr.send(null);
+    return xhr;
+  }
 
-  document.getElementById('btnLogin').onclick = function(){
-    //window.location = 'i/dash/card/index.html';
-    facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
-      function (error) {
-        console.error(error)
-      }
-    );
-  };
 
+
+
+
+
+
+
+
+
+
+
+//navigator.notification.alert(JSON.stringify(d));
   ///a/facebook/done?
 
-
+// facebookConnectPlugin.getLoginStatus(function(response){
+//     if(response.status === 'connected'){
+//         authenticate(response.authResponse.accessToken)
+//     }
+//     else {
+//         facebookConnectPlugin.login(['email', 'public_profile'], function(response) {
+//             authenticate(response.authResponse.accessToken);
+//         }, function(err) {
+//             $ionicPopup.alert({
+//                 title: "Oops!",
+//                 template: err.errorMessage || err
+//             })
+//         });
+//     }
+// });
 
 
