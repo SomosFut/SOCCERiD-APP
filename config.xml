@@ -6,7 +6,7 @@
     </description>
     <author email="leon@somosfut.com" href="http://somosfut.com">SOMOSFUT</author>
     <content src="index.html" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="15" />
     <preference name="phonegap-version" value="cli-6.1.0" />
     <preference name="orientation" value="portrait" />
     <preference name="permissions" value="none" />
