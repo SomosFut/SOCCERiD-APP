@@ -76,10 +76,10 @@
         <div class="row topLeague topapp">
         <div class="col-xs-12 col-md-12 col-md-8 col-lg-8 center">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 appcontainer">
-            <a href="#" class="linkapp"><img src="static/last/img/ap41.png" class="app"></a>
+            <a id="linkSF" href="#" class="linkapp"><img src="static/last/img/ap41.png" class="app"></a>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 appcontainer">
-            <a href="#" class="linkapp"><img src="static/last/img/app3.png" class="app"></a>
+            <a id="linkSU" href="#" class="linkapp"><img src="static/last/img/app3.png" class="app"></a>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 appcontainer">
             <a href="card.html" class="linkapp"><img src="static/last/img/app1.png" class="app"></a>
@@ -128,10 +128,36 @@ document.addEventListener('deviceready', function(){
   DONE
 ===================================================================================================== */
 function processCont(name, photo, url, sn) {
+  
   $('#photo').attr('src', photo);
   $('#name').text(name);
-  $('#linkprof').attr('href', 'https://soccerid.co/'+url);
+  $('#linkprof').attr('href', 'profile.html');
+
+  if (device.platform === 'iOS') {
+    $('#linkSF').attr('href', 'itms-apps://itunes.com/apps/com.somosfut2.app');
+    $('#linkSU').attr('href', 'itms-apps://itunes.com/apps/com.camarafanbolero.com');
+  }else {
+    $('#linkSF').attr('href', 'market://details?id=com.somosfut2.app');
+    $('#linkSU').attr('href', 'market://details?id=com.camarafanbolero.com');
+  }
 }
+
+/*
+
+seeuplay
+https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8
+https://itunes.apple.com/app/id1133070470
+
+somosfut
+https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8
+https://play.google.com/store/apps/details?id=com.somosfut2.app
+
+android
+market://details?id=com.somosfut2.app
+market://details?id=com.camarafanbolero.com
+*/
+
+
 
 
 </script>

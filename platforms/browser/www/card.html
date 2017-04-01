@@ -35,7 +35,7 @@
   
   <!-- JS -->
   <script src="static/last/js/soccer.js"></script>
-  <script src="https://soccerid.co/a/user"></script>
+  <!-- <script src="https://soccerid.co/a/user"></script> -->
     <!-- Google fonts - Open Sans-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
     <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre|Bubblegum+Sans|Montserrat:100,400" rel="stylesheet">
@@ -60,8 +60,8 @@
             <div class="container">
                 <div class="row">
                   <div class="col-xs-1"></div>
-            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
-            <a href="/i/dash" class="logo"></a>
+           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <a href="dash.html" class="logo"></a>
           </div>
                     <a id="linkprof" href="#"><div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 right">
              <span id="name" class="nombreId">s</span>
@@ -166,108 +166,7 @@
   </div>
 
 <script type="text/javascript" src="cordova.js"></script>
-<script>
-document.addEventListener('deviceready', function(){
-
-  facebookConnectPlugin.getLoginStatus(function(d) {
-    if (d.status === 'connected'){
-      processCont(window.localStorage.getItem('name'), window.localStorage.getItem('photo'), window.localStorage.getItem('url'), 'F');
-    } else {
-      window.location = 'index.html';
-    }
-  });
-
-}, false);
-
-
-/* =====================================================================================================
-  DONE
-===================================================================================================== */
-function processCont(name, photo, url, sn) {
-  $('#photo').attr('src', photo);
-  $('#name').text(name);
-  $('#linkprof').attr('href', 'https://soccerid.co/'+url);
-
-  $('#namebox').val(name.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ]/gi, '').slice(0,22)).keyup(function(){
-    this.value = this.value.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ]/gi, '').slice(0,22);
-  })
-
-
-  $('#urlbox').val(name.toLowerCase()
-    .replace(/á/gi,"a").replace(/é/gi,"e").replace(/í/gi,"i").replace(/ó/gi,"o").replace(/ú/gi,"u").replace(/ñ/gi,"n")
-    .replace(/[^\w]/gi, '').slice(0,50)).keyup(function(){
-    this.value = this.value.replace(/[^\w]/gi, '').toLowerCase().slice(0,50);
-    //
-
-    var self = this;
-
-    $.get('https://soccerid.co/a/check?url='+this.value)
-      .done(function(d) {
-        if (d === 'not' || d === 'owner'){
-          $(self).parent().removeClass('has-error');
-        }else{
-          $(self).parent().addClass('has-error');
-        }
-      })
-
-  });
-
-
-  $('#ofbox, #defbox, #numbox').change(function(){
-    this.value = isNaN(parseInt(this.value)) ? 1 : parseInt(this.value);
-  });
-
-  // checar info
-  $.get('https://soccerid.co/a/getcard', function(d){
-    if(d){
-      var data = JSON.parse(d);
-      
-
-      $('#namebox').val(data.name);
-      $('#urlbox').val(data.customUrl);
-      $('#numbox').val(data.num);
-      $('#posbox').val(data.pos);
-      $('#defbox').val(data.def);
-      $('#ofbox').val(data.of);
-      $('#countrybox').val(data.ctry);
-
-    }
-    
-  });
-
-
-
-  $('#btnsave').click(function(e){
-    e.preventDefault();
-    $(this).attr('disabled', 'disabled');
-
-    var info = {
-      name : $('#namebox').val(),
-      url : $('#urlbox').val(),
-      num : $('#numbox').val(),
-      pos : $('#posbox').val(),
-      def : $('#defbox').val(),
-      of : $('#ofbox').val(),
-      ctry : $('#countrybox').val()
-    };
-
-    $.get('https://soccerid.co/a/card', info)
-      .done(function(d) {
-        if ('exist' === d) return;
-        //document.cookie = 'url=/'+$('#urlbox').val()+'; path=/';
-        location.href = 'i/dash/ok/';
-      })
-      .fail(function() {
-        location.href = '/';
-      });
-  });
-}
-
-
-</script>
-
-
-
+<script type="text/javascript" src="card.js"></script>
 <script>
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

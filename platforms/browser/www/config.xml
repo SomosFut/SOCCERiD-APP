@@ -49,4 +49,5 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="deployment-target" value="7.0" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
 </widget>

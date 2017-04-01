@@ -17,7 +17,7 @@ document.addEventListener('deviceready', function(){
 function processCont(name, photo, url, sn) {
   $('#photo').attr('src', photo);
   $('#name').text(name);
-  $('#linkprof').attr('href', 'https://soccerid.co/'+url);
+  $('#linkprof').attr('href', 'profile.html');
 
   $('#namebox').val(name.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ]/gi, '').slice(0,22)).keyup(function(){
     this.value = this.value.replace(/[^\w\sñÑáéíóúÁÉÍÓÚ]/gi, '').slice(0,22);

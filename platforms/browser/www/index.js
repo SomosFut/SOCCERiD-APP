@@ -1,7 +1,7 @@
   document.addEventListener("deviceready", onDeviceReady, false);
   
   function onDeviceReady() {
-
+    StatusBar.hide();
     /* =====================================================================================================
       VALID STATUS
     ===================================================================================================== */
@@ -11,7 +11,7 @@
         //   window.location='league.html';
         // } else {
         //   window.location='dash.html';
-        //}
+        // }
       }
     });
 
@@ -44,6 +44,7 @@
           window.localStorage.setItem('photo', info.photo);
           window.localStorage.setItem('url', info.url);
           window.localStorage.setItem('step', info.s);
+          window.localStorage.setItem('id', info.id);
           if (info.s === '1') {
             window.location='league.html';
           } else {

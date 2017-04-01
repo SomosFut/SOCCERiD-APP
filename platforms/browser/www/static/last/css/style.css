@@ -16,7 +16,7 @@ a { color: #FFF; }
 
 /*  home  */
 .topHome { background: #429756 url('../img/bg.jpg') center; background-size: cover; padding: 20px 0 110px; }
-.logo { display: block; background: url('../img/logo.png') top left no-repeat; width: 140px; height: 35px; background-size: contain; margin: 0 auto; }
+.logo { display: block; background: url('../../images/logo.svg') top left no-repeat; width: 35px; height: 35px; background-size: contain; margin: 0 auto; }
 .admin { float: right; display: inline-block; color: #FFF; padding: 6px 12px; text-align: center; border: 1px solid #FFF; }
 .admin:hover, .admin:active, .admin:focus { background: #FFF; color: #2b7c63; text-decoration: none; outline: none; }
 .headLogo { margin-top: 20px; }
@@ -229,7 +229,7 @@ html input[disabled] { background: #ccc; }
 
 @media (min-width: 0) and (max-width: 599px) {
 	.mobileHide { display: none; }
-	body { background-size: inherit; }
+	body { background-size: cover; }
 	.fixInput { margin-bottom: 0; }
 	.iconsFinal { width: 45%; }
 	.finalText { font-size: 13px; }
@@ -244,7 +244,7 @@ html input[disabled] { background: #ccc; }
 	.soccer-links{margin-top: -30px!important;}
 }
 @media (min-width: 600px) {
-	body { background-size: initial; }
+	body { background-size: cover; }
 }
 @media (min-width: 0) and (max-width: 979px) {
 	.mobileHide { display: none; }
