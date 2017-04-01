@@ -132,14 +132,14 @@ function processCont(name, photo, url, sn) {
   $('#photo').attr('src', photo);
   $('#name').text(name);
   $('#linkprof').attr('href', 'profile.html');
+  $('#linkSF').attr('href', 'itms-apps://itunes.com/apps/com.somosfut2.app');
+  $('#linkSU').attr('href', 'itms-apps://itunes.com/apps/com.camarafanbolero.com');
 
-  if (device.platform === 'iOS') {
-    $('#linkSF').attr('href', 'itms-apps://itunes.com/apps/com.somosfut2.app');
-    $('#linkSU').attr('href', 'itms-apps://itunes.com/apps/com.camarafanbolero.com');
-  }else {
-    $('#linkSF').attr('href', 'market://details?id=com.somosfut2.app');
-    $('#linkSU').attr('href', 'market://details?id=com.camarafanbolero.com');
-  }
+  // if (device.platform === 'iOS') {
+  // }else {
+  //   $('#linkSF').attr('href', 'market://details?id=com.somosfut2.app');
+  //   $('#linkSU').attr('href', 'market://details?id=com.camarafanbolero.com');
+  // }
 }
 
 /*
