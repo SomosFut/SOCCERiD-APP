@@ -132,21 +132,22 @@ function processCont(name, photo, url, sn) {
   $('#photo').attr('src', photo);
   $('#name').text(name);
   $('#linkprof').attr('href', 'profile.html');
-  $('#linkSF').attr('href', 'https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8');
-  $('#linkSU').attr('href', 'https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8');
+ 
 
-  // if (device.platform === 'iOS') {
-  // }else {
-  //   $('#linkSF').attr('href', 'market://details?id=com.somosfut2.app');
-  //   $('#linkSU').attr('href', 'market://details?id=com.camarafanbolero.com');
-  // }
+  if (device.platform === 'iOS') {
+    $('#linkSF').attr('href', 'https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8');
+    $('#linkSU').attr('href', 'https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8');
+  }else {
+    $('#linkSF').attr('href', 'https://play.google.com/store/apps/details?id=com.somosfut2.app');
+    $('#linkSU').attr('href', 'https://play.google.com/store/apps/details?id=com.camarafanbolero.com');
+  }
 }
 
 /*
 
 seeuplay
 https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8
-https://itunes.apple.com/app/id1133070470
+https://play.google.com/store/apps/details?id=com.camarafanbolero.com
 
 somosfut
 https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8
