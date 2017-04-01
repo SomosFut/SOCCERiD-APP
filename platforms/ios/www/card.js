@@ -2,12 +2,12 @@ document.addEventListener('deviceready', function(){
   //navigator.notification.alert('ready card');
   facebookConnectPlugin.getLoginStatus(function(d) {
     if (d.status === 'connected'){
-      processCont(window.localStorage.getItem('name'), window.localStorage.getItem('photo'), window.localStorage.getItem('url'), 'F');
+      
     } else {
       window.location = 'index.html';
     }
   });
-
+  processCont(window.localStorage.getItem('name'), window.localStorage.getItem('photo'), window.localStorage.getItem('url'), 'F');
 }, false);
 
 

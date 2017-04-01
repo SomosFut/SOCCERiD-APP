@@ -59,7 +59,6 @@
     <div class="fluid-container topLeagueMenu">
             <div class="fluid-container">
                 <div class="row">
-                <!--  <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 center" style="display: block; height: 20px; text-align: center; background:#3971d3; color: white; top: 0; margin-top: -20px; margin-bottom: 20px; font-size: 12px; font-weight: lighter;">Por ahora busca tu Liga aquí: <b><a href="https://play.google.com/store/apps/details?id=com.somosfut2.app" target="_blank">Android</a> - <a href="https://itunes.apple.com/us/app/somosfut/id1044006800?mt=8" target="_blank">iOS</a></b></div> -->
                   <div class="col-xs-1"></div>
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
             <a href="dash.html" class="logo"></a>
@@ -115,12 +114,12 @@ document.addEventListener('deviceready', function(){
 
   facebookConnectPlugin.getLoginStatus(function(d) {
     if (d.status === 'connected'){
-      processCont(window.localStorage.getItem('name'), window.localStorage.getItem('photo'), window.localStorage.getItem('url'), 'F');
+      
     } else {
       window.location = 'index.html';
     }
   });
-
+  processCont(window.localStorage.getItem('name'), window.localStorage.getItem('photo'), window.localStorage.getItem('url'), 'F');
 }, false);
 
 
@@ -132,13 +131,14 @@ function processCont(name, photo, url, sn) {
   $('#photo').attr('src', photo);
   $('#name').text(name);
   $('#linkprof').attr('href', 'profile.html');
+ 
 
   if (device.platform === 'iOS') {
     $('#linkSF').attr('href', 'https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8');
-    $('#linkSU').attr('href', 'itms-apps://itunes.com/apps/com.camarafanbolero.com');
+    $('#linkSU').attr('href', 'https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8');
   }else {
-    $('#linkSF').attr('href', 'market://details?id=com.somosfut2.app');
-    $('#linkSU').attr('href', 'market://details?id=com.camarafanbolero.com');
+    $('#linkSF').attr('href', 'https://play.google.com/store/apps/details?id=com.somosfut2.app');
+    $('#linkSU').attr('href', 'https://play.google.com/store/apps/details?id=com.camarafanbolero.com');
   }
 }
 
@@ -146,7 +146,7 @@ function processCont(name, photo, url, sn) {
 
 seeuplay
 https://itunes.apple.com/mx/app/seeuplay/id1133070470?mt=8
-https://itunes.apple.com/app/id1133070470
+https://play.google.com/store/apps/details?id=com.camarafanbolero.com
 
 somosfut
 https://itunes.apple.com/mx/app/somosfut/id1044006800?mt=8
