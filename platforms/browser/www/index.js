@@ -1,11 +1,13 @@
   document.addEventListener("deviceready", onDeviceReady, false);
   
   function onDeviceReady() {
-    StatusBar.hide();
+    //StatusBar.hide();
     /* =====================================================================================================
       VALID STATUS
     ===================================================================================================== */
+    navigator.notification.alert('uno');
     facebookConnectPlugin.getLoginStatus(function(d) {   
+      navigator.notification.alert('entra');
       if (d.status === 'connected'){
         // if (window.localStorage.getItem('step') === '1') {
         //   window.location='league.html';
@@ -18,6 +20,7 @@
     /* =====================================================================================================
       LOGIN BUTTON
     ===================================================================================================== */
+    //navigator.notification.alert('dos');
     document.getElementById('btnLogin').onclick = function(){
       facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
         function (error) {

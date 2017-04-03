@@ -1,0 +1,23 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-facebook4": {
+            "APP_ID": "716832795142205",
+            "APP_NAME": "soccerid",
+            "PACKAGE_NAME": "co.soccerid.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "co.soccerid.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "co.soccerid.app"
+        }
+    },
+    "dependent_plugins": {}
+}

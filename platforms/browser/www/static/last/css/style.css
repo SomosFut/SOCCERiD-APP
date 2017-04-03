@@ -236,13 +236,18 @@ html input[disabled] { background: #ccc; }
 	.finalText h2 { font-size: 20px; }
 
 	.topapp{margin-top: 50px;}
-	.appcontainer{ text-align: center; margin-bottom: 100px;}
+	.appcontainer{ text-align: center; margin-bottom: 100px; padding: 0;}
 	.app{width: 130px;}
 	.messageTwo{padding: 25px 0px !important;}
 	.soccer-card{margin-top: 10px !important; margin-bottom: -40px;}
 	.soccer-text{text-align: center !important;}
 	.soccer-links{margin-top: -30px!important;}
 }
+
+@media (min-width: 0) and (max-width: 320px) {
+	.message p { color: #eee!important; font-weight: lighter; margin-top: 8px; font-size: 12px;}
+}
+
 @media (min-width: 600px) {
 	body { background-size: cover; }
 }

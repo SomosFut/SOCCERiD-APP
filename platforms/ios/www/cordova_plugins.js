@@ -201,14 +201,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
-        "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
-        "pluginId": "cordova-plugin-facebook4",
-        "clobbers": [
-            "facebookConnectPlugin"
-        ]
-    },
-    {
         "id": "cordova-plugin-file.DirectoryEntry",
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "pluginId": "cordova-plugin-file",
@@ -552,20 +544,28 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-statusbar.statusbar",
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "pluginId": "cordova-plugin-statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
-    },
-    {
         "id": "cordova-plugin-vibration.notification",
         "file": "plugins/cordova-plugin-vibration/www/vibration.js",
         "pluginId": "cordova-plugin-vibration",
         "merges": [
             "navigator.notification",
             "navigator"
+        ]
+    },
+    {
+        "id": "cordova-plugin-facebook4.FacebookConnectPlugin",
+        "file": "plugins/cordova-plugin-facebook4/www/facebook-native.js",
+        "pluginId": "cordova-plugin-facebook4",
+        "clobbers": [
+            "facebookConnectPlugin"
+        ]
+    },
+    {
+        "id": "cordova-plugin-statusbar.statusbar",
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
         ]
     }
 ];
@@ -581,7 +581,6 @@ module.exports.metadata =
     "cordova-plugin-device-motion": "1.2.4",
     "cordova-plugin-device-orientation": "1.0.6",
     "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-facebook4": "1.7.4",
     "cordova-plugin-file": "4.3.2",
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-geolocation": "2.1.0",
@@ -591,9 +590,10 @@ module.exports.metadata =
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-network-information": "1.2.1",
     "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.4",
-    "cordova-plugin-whitelist": "1.2.2"
+    "cordova-plugin-whitelist": "1.2.2",
+    "cordova-plugin-facebook4": "1.7.4",
+    "cordova-plugin-statusbar": "2.2.2"
 };
 // BOTTOM OF METADATA
 });

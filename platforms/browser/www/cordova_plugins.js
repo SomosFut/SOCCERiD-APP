@@ -570,22 +570,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar",
-        "pluginId": "cordova-plugin-statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-statusbar/src/browser/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar.Browser",
-        "pluginId": "cordova-plugin-statusbar",
-        "merges": [
-            "window.StatusBar"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-vibration/www/vibration.js",
         "id": "cordova-plugin-vibration.notification",
         "pluginId": "cordova-plugin-vibration",
@@ -610,6 +594,20 @@ module.exports = [
         "clobbers": [
             "facebookConnectPlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+        "id": "cordova-plugin-statusbar.StatusBarProxy",
+        "pluginId": "cordova-plugin-statusbar",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -633,10 +631,10 @@ module.exports.metadata =
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-network-information": "1.2.1",
     "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.4",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-facebook4": "1.7.4"
+    "cordova-plugin-facebook4": "1.7.4",
+    "cordova-plugin-statusbar": "2.2.2"
 }
 // BOTTOM OF METADATA
 });

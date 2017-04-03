@@ -31,11 +31,6 @@
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "co.soccerid"
         },
-        "cordova-plugin-facebook4": {
-            "APP_ID": "716832795142205",
-            "APP_NAME": "Soccerid",
-            "PACKAGE_NAME": "co.soccerid"
-        },
         "cordova-plugin-file-transfer": {
             "PACKAGE_NAME": "co.soccerid"
         },
@@ -60,14 +55,19 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "co.soccerid"
         },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "co.soccerid"
-        },
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "co.soccerid"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "co.soccerid"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "716832795142205",
+            "APP_NAME": "soccerid",
+            "PACKAGE_NAME": "co.soccerid.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "co.soccerid.app"
         }
     },
     "dependent_plugins": {
