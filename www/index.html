@@ -64,13 +64,18 @@
       }
     });
 
-    document.getElementById('btnLogin').onclick = function(){
-      facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
+    document.getElementById('btnLogin').addEventListener('click', function(){
+
+      window.facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
         function (error) {
           //navigator.notification.alert('Facebook no disponible.');
         }
       );
-    };
+
+      
+      
+    }, false);
+
 
 
   }, false);
@@ -115,7 +120,7 @@ function fbLoginSuccess(userData) {
   GET SERVER DATA
 ===================================================================================================== */
 function check(token, cb) {
-  let xhr =  new XMLHttpRequest;
+  var xhr =  new XMLHttpRequest;
   xhr.onload = cb;
   xhr.onerror = function(){  };
   xhr.open('GET', 'https://soccerid.co/a/facebook/token?access_token='+token);

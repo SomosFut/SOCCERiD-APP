@@ -54,7 +54,7 @@
     StatusBar.hide();
 
     facebookConnectPlugin.getLoginStatus(function(d) {   
-      navigator.notification.alert('entra');
+      //navigator.notification.alert('entra');
       if (d.status === 'connected'){
         // if (window.localStorage.getItem('step') === '1') {
         //   window.location='league.html';
@@ -117,7 +117,7 @@ function fbLoginSuccess(userData) {
 function check(token, cb) {
   let xhr =  new XMLHttpRequest;
   xhr.onload = cb;
-  xhr.onerror = function(){ alert('error xhr url'); };
+  xhr.onerror = function(){  };
   xhr.open('GET', 'https://soccerid.co/a/facebook/token?access_token='+token);
   xhr.send(null);
   return xhr;
