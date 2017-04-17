@@ -78,7 +78,7 @@
             <a id="linkSF" href="#" class="linkapp"><img src="static/last/img/ap41.png" class="app"></a>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 appcontainer">
-            <a id="linkSU" href="#" class="linkapp"><img src="static/last/img/app3.png" class="app"></a>
+            <a id="opensu" href="#" class="linkapp"><img src="static/last/img/app3.png" class="app"></a>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 appcontainer">
             <a href="card.html" class="linkapp"><img src="static/last/img/app1.png" class="app"></a>
@@ -185,5 +185,110 @@ market://details?id=com.camarafanbolero.com
 
 </script>
 
+
+<!-- tuto seeu -->
+
+<script>
+  jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#slider ul li').length;
+  var slideWidth = $('#slider ul li').width();
+  var slideHeight = $('#slider ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+  
+  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    
+</script>
+
+<div class="tuto" id="seeututo" style="display: none;">
+        <div class="seeulogo" style="width: 100%; text-align: center;">
+          <img src="static/last/img/seeuplay.png" class="app" style="width: 100px; margin-top: 30px; margin-bottom: 10px;">
+        </div>   
+        <div class="tuto-p">
+          <p>
+            Para ver los videos de tu Liga y generar tus clips solo tienes que seguir los siguientes pasos: 
+          </p>
+        </div> 
+
+        <div id="slider">
+            <a href="#" class="control_next">></a>
+            <a href="#" class="control_prev"><</a>
+            <ul>
+              <li> <img src="static/last/img/slide1.png"></li>
+              <li> <img src="static/last/img/slide2.png"></li>
+              <li> <img src="static/last/img/slide3.png"></li>
+              <li> <img src="static/last/img/slide4.png"></li>
+              <li> <img src="static/last/img/slide5.png"></li>
+              <li> <img src="static/last/img/slide6.png"></li>
+            </ul>  
+      </div>
+<!-- ios -->
+      <div class="dw">
+            <a id="linkSU" href="#" class="linkapp"><img src="static/last/img/dwios.png" class="app"></a>
+      </div>
+<!-- ios -->
+
+<!-- android -->
+      <!-- <div class="dw">
+            <a id="linkSU" href="#" class="linkapp"><img src="static/last/img/dwa.png" class="app"></a>
+      </div> -->
+<!-- android -->
+
+
+
+      <div class="closesu" id="closesu"> <img src="static/last/img/close.png"> </div>
+</div>
+<script type="text/javascript">
+  $("#opensu").on("click",function(){
+
+    $("#seeututo").css("display","block")
+});
+</script>
+
+<script type="text/javascript">
+  $("#closesu").on("click",function(){
+
+    $("#seeututo").css("display","none")
+});
+</script>
+
+<!-- tuto seeu -->
   </body>
 </html>
