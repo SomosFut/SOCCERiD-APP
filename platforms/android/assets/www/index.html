@@ -66,13 +66,13 @@
 
     document.getElementById('btnLogin').addEventListener('click', function(){
 
-      window.facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], function(){},
+      window.facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], fbLoginSuccess,
         function (error) {
           //navigator.notification.alert('Facebook no disponible.');
         }
       );
 
-
+      
       
     }, false);
 
