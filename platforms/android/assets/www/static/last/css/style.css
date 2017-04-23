@@ -318,7 +318,7 @@ a.control_next {
 	width: 100%;
 	text-align: center;
 	position: absolute;
-	bottom: 40px;
+	bottom: 20px;
 }
 
 .closesu{
@@ -350,8 +350,41 @@ a.control_next {
 	.soccer-links{margin-top: -30px!important;}
 }
 
+@media (min-width: 0) and (max-width: 376px) {
+	.tuto-p p{
+	font-size: 14px;
+	}
+	#slider ul {
+	  height: 392px;
+	}
+
+	#slider ul li {
+	  width: 375px;
+	  height: 392px;
+	}
+}
+
+
 @media (min-width: 0) and (max-width: 320px) {
 	.message p { color: #eee!important; font-weight: lighter; margin-top: 8px; font-size: 12px;}
+	.tuto-p p{
+	font-size: 11px;
+	}
+	#slider ul {
+	  height: 320px;
+	}
+
+	#slider ul li {
+	  width: 320px;
+	  height: 334px;
+	}
+
+	.dw{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 20px;
+	}
 }
 
 @media (min-width: 600px) {
