@@ -394,6 +394,8 @@ img.avatar-round{
 /*	MOBILE
 /*===========================================*/
 @media (min-width: 200px) and (max-width: 767px) {
+
+.dwbut{ margin-left: 0px!important; margin-top: 30px; } 
 	
 	.title.large {
     font-size: 21px;
